@@ -1,0 +1,19 @@
+<%- include("../partials/header.ejs") %>
+
+<div class = "container view">
+    <div class = "view-options">
+        <a class = "edit-post btn" href = "/edit/<%= post.ID %>">Edit Post</a>
+        <a class = "delete-post btn" href = "/delete/<%= post.ID %>">Delete Post</a>
+    </div>
+    <div class = "view-post">
+        <h2> <%= post.title %> </h2>
+        <p>Date Created: <%= post.time %> </p>
+        <% if(post.updatedTime != 0){ %>
+            <p>Last Updated: <%= post.updatedTime %> </p>
+        <% } %> <br/>
+        <p> <%= post.content %> </p><br/>
+        <p>By<i> <%= post.author %> </i></p>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs") %>
