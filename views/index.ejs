@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+<% if (successMessage.length > 0) { %>
+  <div class="flash-message success"><%= successMessage[0] %></div>
+  <script>
+    setTimeout(() => {
+      document.querySelector('.flash-message').style.display = 'none';
+    }, 3000);
+  </script>
+<% } %>
+
+<div class = "container home-content">
+    <h1 class = "home-title">Your Blogs</h1>
+    <ul class = "blogs">
+        <% locals.blogs.forEach(blog => { %>
+            <li >
+                <a  href = "/view/<%= blog.ID %>" class = "blog-item">
+                <span class = "blogTitle"><%= blog.title %></span>
+                <span class = "blogTime"><%= blog.time %></span>
+                </a>
+            </li>                       
+        <% }); %>
+    </ul>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
+

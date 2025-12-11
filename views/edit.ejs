@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class = "container create-form">
+    <form action = "/update/<%= post.ID %>" method = "POST">
+        <label for="title">Title: </label>
+        <input type = "text" name = "title" value = "<%= post.title %>" required><br/>
+        
+        <label for="author">Author: </label>
+        <input type = "text" name = "author" value = "<%= post.author %>" required><br/>
+        
+        <label for="content">Blog: </label><br/>
+        <textarea name = "content" rows = "15" cols = "70" required><%= post.content %></textarea><br/>
+        
+        <input type = "submit" value="update"><br/>
+        
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
